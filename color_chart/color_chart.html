@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>color chart</title>
+  <style>
+    #box{}
+    #box span{display:inline-block;width:100px;height:30px;line-height:30px;text-align: center;}
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <div id="box"></div>
+  </div>
+  <script>
+    var box = document.getElementById("box");
+    //box.innerHTML = "<span>ddd</span>";
+    var colorValue = [];
+
+
+    for (var i = 0; i < 10; i++) {
+      for (var j = 0; j < 6; j++) {
+
+      }
+      var colorCode = "#" + Math.round( Math.random() * 0xffffff ).toString(10);
+      box.appendChild = "<span style=background-color:" + colorCode +">" + colorCode + "</span>";
+      //colorValue.push(i);
+    }
+  </script>
+</body>
+</html>
