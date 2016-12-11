@@ -7,27 +7,41 @@
   <title>color chart</title>
   <style>
     #box{}
-    #box span{display:inline-block;width:100px;height:30px;line-height:30px;text-align: center;}
+    #box span{display:inline-block;width:100px;height:30px;line-height:30px;text-align: center;background-color:#ddd;}
   </style>
 </head>
 <body>
-  <div id="wrap">
-    <div id="box"></div>
-  </div>
-  <script>
-    var box = document.getElementById("box");
-    //box.innerHTML = "<span>ddd</span>";
-    var colorValue = [];
-
-
-    for (var i = 0; i < 10; i++) {
-      for (var j = 0; j < 6; j++) {
-
-      }
-      var colorCode = "#" + Math.round( Math.random() * 0xffffff ).toString(10);
-      box.appendChild = "<span style=background-color:" + colorCode +">" + colorCode + "</span>";
-      //colorValue.push(i);
-    }
-  </script>
+  
 </body>
+<script>
+var setDiv = document.createElement('div');
+
+document.body.appendChild(setDiv);
+setDiv.setAttribute('id','box');
+
+var box = document.getElementById('box');
+
+for (var i = 0; i <= 255; i++) {
+  var colorValue =i.toString(16);
+  var span = document.createElement( 'span' );
+  var spanTxt = document.createTextNode('#'+colorValue+colorValue+colorValue);
+  span.appendChild(spanTxt);
+  box.appendChild(span);
+  span.setAttribute('style','background-color:#'+colorValue+colorValue+colorValue);
+
+
+  //var jbBtnText = document.createTextNode( 'Click' );
+  //jbBtn.appendChild( jbBtnText );
+  //document.body.appendChild( jbBtn );
+
+  for (var j = 0; j < 6; j++) {
+
+  }
+}
+//box.appendChild(div);
+//box.appendChild(span);
+var colorCode = "#" + Math.round( Math.random() * 0xffffff ).toString(16);
+
+//box.innerHTML = "<span style=background-color:" + colorCode +">" + colorCode + "</span>";
+</script>
 </html>
