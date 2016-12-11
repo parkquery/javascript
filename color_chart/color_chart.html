@@ -6,12 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>color chart</title>
   <style>
-    #box{}
-    #box span{display:inline-block;width:100px;height:30px;line-height:30px;text-align: center;background-color:#ddd;}
+    #box{width:1650px;margin:0 auto}
+    #box span{display:inline-block;width:100px;height:30px;margin:0 3px 3px 0;line-height:30px;text-align: center;background-color:#ddd;}
+    #box span:nth-child(16n){margin:0 3px 0 0}
   </style>
 </head>
 <body>
-  
+
 </body>
 <script>
 var setDiv = document.createElement('div');
@@ -21,7 +22,7 @@ setDiv.setAttribute('id','box');
 
 var box = document.getElementById('box');
 
-for (var i = 0; i <= 255; i++) {
+for (var i = 16; i <= 255; i++) {
   var colorValue =i.toString(16);
   var span = document.createElement( 'span' );
   var spanTxt = document.createTextNode('#'+colorValue+colorValue+colorValue);
