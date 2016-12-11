@@ -6,43 +6,54 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>color chart</title>
   <style>
-    #box{width:1650px;margin:0 auto}
+    #box{width:210px;margin:0 auto}
     #box span{display:inline-block;width:100px;height:30px;margin:0 3px 3px 0;line-height:30px;text-align: center;background-color:#ddd;}
-    #box span:nth-child(16n){margin:0 3px 0 0}
+    #box span:nth-child(even){margin:0 0 3px 0}
   </style>
 </head>
 <body>
 
 </body>
 <script>
-var setDiv = document.createElement('div');
+var colorCode = function (){
+  var setDiv = document.createElement('div');
 
-document.body.appendChild(setDiv);
-setDiv.setAttribute('id','box');
+  document.body.appendChild(setDiv);
+  setDiv.setAttribute('id','box');
 
-var box = document.getElementById('box');
+  var box = document.getElementById('box');
 
-for (var i = 16; i <= 255; i++) {
-  var colorValue =i.toString(16);
-  var span = document.createElement( 'span' );
-  var spanTxt = document.createTextNode('#'+colorValue+colorValue+colorValue);
-  span.appendChild(spanTxt);
-  box.appendChild(span);
-  span.setAttribute('style','background-color:#'+colorValue+colorValue+colorValue);
+  var colorValue;
+  for (var i = 0; i < 16; i++) {
+    colorValue = "#" + i.toString(16);
+    for (var j = 0; j < 5; j++) {
+      colorValue += i.toString(16);
+    }
 
-
-  //var jbBtnText = document.createTextNode( 'Click' );
-  //jbBtn.appendChild( jbBtnText );
-  //document.body.appendChild( jbBtn );
-
-  for (var j = 0; j < 6; j++) {
-
+    var span = document.createElement( 'span' );
+    var spanTxt = document.createTextNode(colorValue);
+    span.appendChild(spanTxt);
+    box.appendChild(span);
+    span.setAttribute('style','background-color:' + colorValue);
   }
-}
-//box.appendChild(div);
-//box.appendChild(span);
-//var colorCode = "#" + Math.round( Math.random() * 0xffffff ).toString(16);
+}();
 
-//box.innerHTML = "<span style=background-color:" + colorCode +">" + colorCode + "</span>";
+
+
+// var test = function (){
+//   var star = "";
+//   for (var i = 0; i <= 10; i++) {
+//       for (var j = 0; j <= i; j++) {
+//         star += "*";
+//       }
+//       star += "\n";
+//   }
+//   console.log(star);
+// }();
+
+
+
+
+
 </script>
 </html>
