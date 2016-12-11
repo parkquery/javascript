@@ -6,37 +6,294 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>color chart</title>
   <style>
-    #box{width:210px;margin:0 auto}
-    #box span{display:inline-block;width:100px;height:30px;margin:0 3px 3px 0;line-height:30px;text-align: center;background-color:#ddd;}
-    #box span:nth-child(even){margin:0 0 3px 0}
+    .box{width:1400px;margin:0 auto 40px}
+    .box span{display:inline-block;width:84px;height:30px;margin:0 3px 3px 0;line-height:30px;text-align: center;background-color:#ddd;color:#fff}
   </style>
 </head>
 <body>
 
 </body>
+
 <script>
-var colorCode = function (){
-  var setDiv = document.createElement('div');
+var color_red = function(){
+  var setDiv = document.createElement('div'); //div 생성
+  document.body.appendChild(setDiv); //div 삽입
+  setDiv.setAttribute('class','box'); //div class 할당
+  var box = document.getElementsByClassName('box')[0]; //box 선택
+  var redStart = 0; //시작부분 0~254
+  var redEnd = 255; //종료부분 1~255
+  var greenStart = 0; //시작부분 0~254
+  var greenEnd = 0; //종료부분 1~255
+  var blueStart = 0; //시작부분 0~254
+  var blueEnd = 0; //종료부분 1~255
 
-  document.body.appendChild(setDiv);
-  setDiv.setAttribute('id','box');
-
-  var box = document.getElementById('box');
-
-  var colorValue;
-  for (var i = 0; i < 16; i++) {
-    colorValue = "#" + i.toString(16);
-    for (var j = 0; j < 5; j++) {
-      colorValue += i.toString(16);
+  for (var i = redStart; i <= redEnd; i++) {
+    //red
+    colorRed = i.toString(16); //16진수 변환
+    if (i < 16) {
+      colorRed = "0" + i.toString(16); //16진수 변환
     }
 
-    var span = document.createElement( 'span' );
-    var spanTxt = document.createTextNode(colorValue);
-    span.appendChild(spanTxt);
-    box.appendChild(span);
-    span.setAttribute('style','background-color:' + colorValue);
+    for (var j = greenStart; j <= greenEnd; j++) {
+      //green
+      colorGreen = j.toString(16); //16진수 변환
+      if (j < 16) {
+        colorGreen = "0" + j.toString(16); //16진수 변환
+      }
+
+      for (var k = blueStart; k <= blueEnd; k++) {
+        //blue
+        colorBlue = k.toString(16); //16진수 변환
+        if (k < 16) {
+          colorBlue = "0" + k.toString(16); //16진수 변환
+        }
+
+        var span = document.createElement( 'span' ); //span 생성
+        var spanTxt = document.createTextNode("#" + colorRed + colorGreen + colorBlue); //RGB컬러 텍스트 표기
+        span.appendChild(spanTxt); //RGB컬러 텍스트 삽입
+        box.appendChild(span); //span 삽입
+        span.setAttribute('style','background-color:#' + colorRed + colorGreen + colorBlue); //RGB컬러 배경 속성 부여
+      }
+
+    }
+
   }
 }();
+
+var color_red_txt = function(){
+  var setDiv = document.createElement('div'); //div 생성
+  document.body.appendChild(setDiv); //div 삽입
+  setDiv.setAttribute('class','box'); //div class 할당
+  var box = document.getElementsByClassName('box')[1]; //box 선택
+  var redStart = 0; //시작부분 0~254
+  var redEnd = 255; //종료부분 1~255
+  var greenStart = 0; //시작부분 0~254
+  var greenEnd = 0; //종료부분 1~255
+  var blueStart = 0; //시작부분 0~254
+  var blueEnd = 0; //종료부분 1~255
+
+  for (var i = redStart; i <= redEnd; i++) {
+    //red
+    colorRedTxt = i;
+    colorRed = i.toString(16); //16진수 변환
+    if (i < 16) {
+      colorRed = "0" + i.toString(16); //16진수 변환
+    }
+
+    for (var j = greenStart; j <= greenEnd; j++) {
+      //green
+      colorGreenTxt = j;
+      colorGreen = j.toString(16); //16진수 변환
+      if (j < 16) {
+        colorGreen = "0" + j.toString(16); //16진수 변환
+      }
+
+      for (var k = blueStart; k <= blueEnd; k++) {
+        //blue
+        colorBlueTxt = k;
+        colorBlue = k.toString(16); //16진수 변환
+        if (k < 16) {
+          colorBlue = "0" + k.toString(16); //16진수 변환
+        }
+
+        var span = document.createElement( 'span' ); //span 생성
+        var spanTxt = document.createTextNode("(" + colorRedTxt + "," + colorGreenTxt + "," + colorBlueTxt + ")"); //RGB컬러 텍스트 표기
+        span.appendChild(spanTxt); //RGB컬러 텍스트 삽입
+        box.appendChild(span); //span 삽입
+        span.setAttribute('style','background-color:#' + colorRed + colorGreen + colorBlue); //RGB컬러 배경 속성 부여
+      }
+
+    }
+
+  }
+}();
+
+var color_green = function(){
+  var setDiv = document.createElement('div'); //div 생성
+  document.body.appendChild(setDiv); //div 삽입
+  setDiv.setAttribute('class','box'); //div class 할당
+  var box = document.getElementsByClassName('box')[2]; //box 선택
+  var redStart = 0; //시작부분 0~254
+  var redEnd = 0; //종료부분 1~255
+  var greenStart = 0; //시작부분 0~254
+  var greenEnd = 255; //종료부분 1~255
+  var blueStart = 0; //시작부분 0~254
+  var blueEnd = 0; //종료부분 1~255
+
+  for (var i = redStart; i <= redEnd; i++) {
+    //red
+    colorRed = i.toString(16); //16진수 변환
+    if (i < 16) {
+      colorRed = "0" + i.toString(16); //16진수 변환
+    }
+
+    for (var j = greenStart; j <= greenEnd; j++) {
+      //green
+      colorGreen = j.toString(16); //16진수 변환
+      if (j < 16) {
+        colorGreen = "0" + j.toString(16); //16진수 변환
+      }
+
+      for (var k = blueStart; k <= blueEnd; k++) {
+        //blue
+        colorBlue = k.toString(16); //16진수 변환
+        if (k < 16) {
+          colorBlue = "0" + k.toString(16); //16진수 변환
+        }
+
+        var span = document.createElement( 'span' ); //span 생성
+        var spanTxt = document.createTextNode("#" + colorRed + colorGreen + colorBlue); //RGB컬러 텍스트 표기
+        span.appendChild(spanTxt); //RGB컬러 텍스트 삽입
+        box.appendChild(span); //span 삽입
+        span.setAttribute('style','background-color:#' + colorRed + colorGreen + colorBlue); //RGB컬러 배경 속성 부여
+      }
+
+    }
+
+  }
+}();
+
+var color_green_txt = function(){
+  var setDiv = document.createElement('div'); //div 생성
+  document.body.appendChild(setDiv); //div 삽입
+  setDiv.setAttribute('class','box'); //div class 할당
+  var box = document.getElementsByClassName('box')[3]; //box 선택
+  var redStart = 0; //시작부분 0~254
+  var redEnd = 0; //종료부분 1~255
+  var greenStart = 0; //시작부분 0~254
+  var greenEnd = 255; //종료부분 1~255
+  var blueStart = 0; //시작부분 0~254
+  var blueEnd = 0; //종료부분 1~255
+
+  for (var i = redStart; i <= redEnd; i++) {
+    //red
+    colorRedTxt = i;
+    colorRed = i.toString(16); //16진수 변환
+    if (i < 16) {
+      colorRed = "0" + i.toString(16); //16진수 변환
+    }
+
+    for (var j = greenStart; j <= greenEnd; j++) {
+      //green
+      colorGreenTxt = j;
+      colorGreen = j.toString(16); //16진수 변환
+      if (j < 16) {
+        colorGreen = "0" + j.toString(16); //16진수 변환
+      }
+
+      for (var k = blueStart; k <= blueEnd; k++) {
+        //blue
+        colorBlueTxt = k;
+        colorBlue = k.toString(16); //16진수 변환
+        if (k < 16) {
+          colorBlue = "0" + k.toString(16); //16진수 변환
+        }
+
+        var span = document.createElement( 'span' ); //span 생성
+        var spanTxt = document.createTextNode("(" + colorRedTxt + "," + colorGreenTxt + "," + colorBlueTxt + ")"); //RGB컬러 텍스트 표기
+        span.appendChild(spanTxt); //RGB컬러 텍스트 삽입
+        box.appendChild(span); //span 삽입
+        span.setAttribute('style','background-color:#' + colorRed + colorGreen + colorBlue); //RGB컬러 배경 속성 부여
+      }
+
+    }
+
+  }
+}();
+
+var color_blue = function(){
+  var setDiv = document.createElement('div'); //div 생성
+  document.body.appendChild(setDiv); //div 삽입
+  setDiv.setAttribute('class','box'); //div class 할당
+  var box = document.getElementsByClassName('box')[4]; //box 선택
+  var redStart = 0; //시작부분 0~254
+  var redEnd = 0; //종료부분 1~255
+  var greenStart = 0; //시작부분 0~254
+  var greenEnd = 0; //종료부분 1~255
+  var blueStart = 0; //시작부분 0~254
+  var blueEnd = 255; //종료부분 1~255
+
+  for (var i = redStart; i <= redEnd; i++) {
+    //red
+    colorRed = i.toString(16); //16진수 변환
+    if (i < 16) {
+      colorRed = "0" + i.toString(16); //16진수 변환
+    }
+
+    for (var j = greenStart; j <= greenEnd; j++) {
+      //green
+      colorGreen = j.toString(16); //16진수 변환
+      if (j < 16) {
+        colorGreen = "0" + j.toString(16); //16진수 변환
+      }
+
+      for (var k = blueStart; k <= blueEnd; k++) {
+        //blue
+        colorBlue = k.toString(16); //16진수 변환
+        if (k < 16) {
+          colorBlue = "0" + k.toString(16); //16진수 변환
+        }
+
+        var span = document.createElement( 'span' ); //span 생성
+        var spanTxt = document.createTextNode("#" + colorRed + colorGreen + colorBlue); //RGB컬러 텍스트 표기
+        span.appendChild(spanTxt); //RGB컬러 텍스트 삽입
+        box.appendChild(span); //span 삽입
+        span.setAttribute('style','background-color:#' + colorRed + colorGreen + colorBlue); //RGB컬러 배경 속성 부여
+      }
+
+    }
+
+  }
+}();
+
+var color_blue_ = function(){
+  var setDiv = document.createElement('div'); //div 생성
+  document.body.appendChild(setDiv); //div 삽입
+  setDiv.setAttribute('class','box'); //div class 할당
+  var box = document.getElementsByClassName('box')[5]; //box 선택
+  var redStart = 0; //시작부분 0~254
+  var redEnd = 0; //종료부분 1~255
+  var greenStart = 0; //시작부분 0~254
+  var greenEnd = 0; //종료부분 1~255
+  var blueStart = 0; //시작부분 0~254
+  var blueEnd = 255; //종료부분 1~255
+
+  for (var i = redStart; i <= redEnd; i++) {
+    //red
+    colorRedTxt = i;
+    colorRed = i.toString(16); //16진수 변환
+    if (i < 16) {
+      colorRed = "0" + i.toString(16); //16진수 변환
+    }
+
+    for (var j = greenStart; j <= greenEnd; j++) {
+      //green
+      colorGreenTxt = j;
+      colorGreen = j.toString(16); //16진수 변환
+      if (j < 16) {
+        colorGreen = "0" + j.toString(16); //16진수 변환
+      }
+
+      for (var k = blueStart; k <= blueEnd; k++) {
+        //blue
+        colorBlueTxt = k;
+        colorBlue = k.toString(16); //16진수 변환
+        if (k < 16) {
+          colorBlue = "0" + k.toString(16); //16진수 변환
+        }
+
+        var span = document.createElement( 'span' ); //span 생성
+        var spanTxt = document.createTextNode("(" + colorRedTxt + "," + colorGreenTxt + "," + colorBlueTxt + ")"); //RGB컬러 텍스트 표기
+        span.appendChild(spanTxt); //RGB컬러 텍스트 삽입
+        box.appendChild(span); //span 삽입
+        span.setAttribute('style','background-color:#' + colorRed + colorGreen + colorBlue); //RGB컬러 배경 속성 부여
+      }
+
+    }
+
+  }
+}();
+
 
 
 </script>
