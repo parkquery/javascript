@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>color chart</title>
   <style>
+    h2{padding:0;margin:0}
     .box{width:1400px;margin:0 auto 40px}
     .box span{display:inline-block;width:84px;height:30px;margin:0 3px 3px 0;line-height:30px;text-align: center;background-color:#ddd;color:#fff}
   </style>
@@ -20,6 +21,11 @@ var color_red = function(){
   document.body.appendChild(setDiv); //div 삽입
   setDiv.setAttribute('class','box'); //div class 할당
   var box = document.getElementsByClassName('box')[0]; //box 선택
+  var setHeading = document.createElement('h2'); //h2 생성
+  box.appendChild(setHeading); //h2 삽입
+  var headingTxt = document.createTextNode('HEX 코드'); //텍스트 생성
+  setHeading.appendChild(headingTxt); //h2 텍스트 삽입
+
   var redStart = 0; //시작부분 0~254
   var redEnd = 255; //종료부분 1~255
   var greenStart = 0; //시작부분 0~254
@@ -65,6 +71,10 @@ var color_red_txt = function(){
   document.body.appendChild(setDiv); //div 삽입
   setDiv.setAttribute('class','box'); //div class 할당
   var box = document.getElementsByClassName('box')[1]; //box 선택
+  var setHeading = document.createElement('h2'); //h2 생성
+  box.appendChild(setHeading); //h2 삽입
+  var headingTxt = document.createTextNode('RGB 코드'); //텍스트 생성
+  setHeading.appendChild(headingTxt); //h2 텍스트 삽입
   var redStart = 0; //시작부분 0~254
   var redEnd = 255; //종료부분 1~255
   var greenStart = 0; //시작부분 0~254
@@ -113,6 +123,10 @@ var color_green = function(){
   document.body.appendChild(setDiv); //div 삽입
   setDiv.setAttribute('class','box'); //div class 할당
   var box = document.getElementsByClassName('box')[2]; //box 선택
+  var setHeading = document.createElement('h2'); //h2 생성
+  box.appendChild(setHeading); //h2 삽입
+  var headingTxt = document.createTextNode('HEX 코드'); //텍스트 생성
+  setHeading.appendChild(headingTxt); //h2 텍스트 삽입
   var redStart = 0; //시작부분 0~254
   var redEnd = 0; //종료부분 1~255
   var greenStart = 0; //시작부분 0~254
@@ -158,6 +172,10 @@ var color_green_txt = function(){
   document.body.appendChild(setDiv); //div 삽입
   setDiv.setAttribute('class','box'); //div class 할당
   var box = document.getElementsByClassName('box')[3]; //box 선택
+  var setHeading = document.createElement('h2'); //h2 생성
+  box.appendChild(setHeading); //h2 삽입
+  var headingTxt = document.createTextNode('RGB 코드'); //텍스트 생성
+  setHeading.appendChild(headingTxt); //h2 텍스트 삽입
   var redStart = 0; //시작부분 0~254
   var redEnd = 0; //종료부분 1~255
   var greenStart = 0; //시작부분 0~254
@@ -206,6 +224,10 @@ var color_blue = function(){
   document.body.appendChild(setDiv); //div 삽입
   setDiv.setAttribute('class','box'); //div class 할당
   var box = document.getElementsByClassName('box')[4]; //box 선택
+  var setHeading = document.createElement('h2'); //h2 생성
+  box.appendChild(setHeading); //h2 삽입
+  var headingTxt = document.createTextNode('HEX 코드'); //텍스트 생성
+  setHeading.appendChild(headingTxt); //h2 텍스트 삽입
   var redStart = 0; //시작부분 0~254
   var redEnd = 0; //종료부분 1~255
   var greenStart = 0; //시작부분 0~254
@@ -251,6 +273,10 @@ var color_blue_ = function(){
   document.body.appendChild(setDiv); //div 삽입
   setDiv.setAttribute('class','box'); //div class 할당
   var box = document.getElementsByClassName('box')[5]; //box 선택
+  var setHeading = document.createElement('h2'); //h2 생성
+  box.appendChild(setHeading); //h2 삽입
+  var headingTxt = document.createTextNode('RGB 코드'); //텍스트 생성
+  setHeading.appendChild(headingTxt); //h2 텍스트 삽입
   var redStart = 0; //시작부분 0~254
   var redEnd = 0; //종료부분 1~255
   var greenStart = 0; //시작부분 0~254
