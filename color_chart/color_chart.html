@@ -16,6 +16,8 @@
 </body>
 
 <script>
+console.time('myTime'); //타이머 시작
+
 var color_red = function(){
   var setDiv = document.createElement('div'); //div 생성
   document.body.appendChild(setDiv); //div 삽입
@@ -25,7 +27,6 @@ var color_red = function(){
   box.appendChild(setHeading); //h2 삽입
   var headingTxt = document.createTextNode('HEX 코드'); //텍스트 생성
   setHeading.appendChild(headingTxt); //h2 텍스트 삽입
-
   var redStart = 0; //시작부분 0~254
   var redEnd = 255; //종료부분 1~255
   var greenStart = 0; //시작부분 0~254
@@ -320,7 +321,7 @@ var color_blue_ = function(){
   }
 }();
 
-
+console.timeEnd('myTime'); //타이머 종료
 
 </script>
 </html>
